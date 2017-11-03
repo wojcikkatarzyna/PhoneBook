@@ -3,12 +3,16 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/app.js'),
-  output: {
-    path: path.resolve(__dirname, 'js'),
-    filename: 'script.js'
+  entry : {
+      'js/script.js': './src/app.js',
+      'css/main.css~': './scss/main.scss'
   },
-  devtool: 'source-map',
+  output : {
+      path: __dirname+'/',
+      filename: '[name]'
+  },
+  watch: true,
+  devtool: 'eval-source-map',
   module: {
     loaders: [{
       test: /\.js$/,
@@ -50,6 +54,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('assets/css/styles.css')
+    new ExtractTextPlugin('css/main.css')
   ]
 };
