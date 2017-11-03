@@ -10,27 +10,44 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body ng-app="phoneBookApp">
+<body ng-app="phoneBookApp" ng-controller="contactController">
     <nav>
-      <h1>
-          MyPhoneBook
-          <i class="material-icons">phone</i>
-      </h1>
-      <div>
-          <i class="material-icons">search</i>
-          <h2> SEARCH </h2>
-      </div>
-      <div>
-          <i class="material-icons">add</i>
-          <h2> ADD NEW CONTACT </h2>
-      </div>
+        <h1>
+            MyPhoneBook
+            <i class="material-icons">phone</i>
+        </h1>
+        <div>
+            <i class="material-icons">search</i>
+            <h2> SEARCH </h2>
+        </div>
+        <div>
+            <i class="material-icons">add</i>
+            <h2> ADD NEW CONTACT </h2>
+        </div>
     </nav>
     <main>
+        <ul>
+            <li ng-repeat="contact in contactList">
+                <div>
+                    <img src={{contact.avatar}} />
+                    <span> {{contact.surname + " " + contact.name}} </span>
+                    <span class="number"> {{contact.number}} </span>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </div>
 
+                <div>
+                    <i class="material-icons">visibility</i>
+                    <i class="material-icons">mode_edit</i>
+                    <i class="material-icons">delete</i>
+                </div>
+            </li>
+        </ul>
     </main>
     <footer>
 
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
