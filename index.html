@@ -13,34 +13,35 @@
 
 <body ng-app="phoneBookApp" ng-controller="contactController">
     <nav>
-        <h1>
-            MyPhoneBook
+        <div class="title">
             <i class="material-icons">phone</i>
-        </h1>
-        <div>
-            <i class="material-icons">search</i>
-            <h2> SEARCH </h2>
+            MyPhoneBook
         </div>
-        <div>
+        <div class="menu">
+            <i class="material-icons">search</i>
+            SEARCH
+        </div>
+        <div class="menu">
             <i class="material-icons">add</i>
-            <h2> ADD NEW CONTACT </h2>
+            ADD NEW CONTACT
         </div>
     </nav>
     <main>
         <ul>
             <li ng-repeat="contact in contactList">
-                <div>
+                <div class="contactBasicInfo">
                     <img src={{contact.avatar}} />
-                    <span> {{contact.surname + " " + contact.name}} </span>
-                    <span class="number"> {{contact.number}} </span>
+                    <span class="contact"> {{contact.surname + " " + contact.name}} </span>
+
                     <i class="material-icons">keyboard_arrow_down</i>
                 </div>
 
-                <div>
+                <div class="contactMoreInfo">
                     <i class="material-icons">visibility</i>
                     <i class="material-icons">mode_edit</i>
                     <i class="material-icons">delete</i>
                 </div>
+                <div class="number"> {{contact.number}} </div>
             </li>
         </ul>
     </main>

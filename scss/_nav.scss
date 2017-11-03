@@ -1,0 +1,15 @@
+nav{
+    background: darkblue;
+    color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+    div.title{
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+    }
+    div.menu{
+        width: 50%;
+        font-size: 15px;
+    }
+}

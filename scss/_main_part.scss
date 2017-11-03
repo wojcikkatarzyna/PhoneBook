@@ -1,0 +1,39 @@
+li{
+    list-style: none;
+    margin: 10px 0;
+    border-bottom: 2px solid blue;
+    div.contactBasicInfo{
+      height: 35px;
+      position: relative;
+      img{
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+      }
+      span.contact{
+          font-size: 25px;
+          line-height: 35px;
+          position: absolute;
+          top: 5px;
+          left: 75px;
+      }
+      i{
+          font-size: 25px;
+          line-height: 35px;
+          position: absolute;
+          top: 5px;
+          right: 5px;
+      }
+  }
+
+  div.contactMoreInfo{
+      display: flex;
+      i{
+          width: 33.33%;
+      }
+  }
+  div.number{
+      font-size: 20px;
+      font-weight: bold;
+  }
+}
