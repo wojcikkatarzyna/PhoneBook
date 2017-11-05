@@ -31,13 +31,14 @@
             <li ng-repeat="contact in contactList">
                 <div class="contactBasicInfo">
                     <img src={{contact.avatar}} />
-                    <span class="contact"> {{contact.surname + " " + contact.name}} </span>
+                    <input ng-disabled="!{{contact.editable}}" type="text" ng-model="contact.surname" placeholder="{{contact.surname}}"/>
+                    <input ng-disabled="!{{contact.editable}}" type="text" ng-model="contact.name" placeholder="{{contact.name}}"/>
                     <i class="material-icons" ng-click="toggleContact($index)">keyboard_arrow_down</i>
                 </div>
 
                 <div  ng-show="{{contact.showDetails}}" class="contactMoreInfo">
-                    <i class="material-icons" ng-click="editContact($index)">mode_edit</i>
-                    <div class="number"> {{contact.number}} </div>
+                    <i class="material-icons" ng-click="editContact($index)"> mode_edit </i>
+                    <input ng-disabled="!{{contact.editable}}" type="number" ng-model="contact.number" placeholder="{{contact.number}}"/>
                     <i class="material-icons" ng-click="deleteContact($index)">delete</i>
                 </div>
             </li>
