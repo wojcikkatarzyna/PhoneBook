@@ -32,16 +32,14 @@
                 <div class="contactBasicInfo">
                     <img src={{contact.avatar}} />
                     <span class="contact"> {{contact.surname + " " + contact.name}} </span>
-
-                    <i class="material-icons">keyboard_arrow_down</i>
+                    <i class="material-icons" ng-click="toggleContact($index)">keyboard_arrow_down</i>
                 </div>
 
-                <div class="contactMoreInfo">
-                    <i class="material-icons">visibility</i>
-                    <i class="material-icons">mode_edit</i>
+                <div  ng-show="{{contact.showDetails}}" class="contactMoreInfo">
+                  <i class="material-icons">mode_edit</i>
+                    <div class="number"> {{contact.number}} </div>
                     <i class="material-icons">delete</i>
                 </div>
-                <div class="number"> {{contact.number}} </div>
             </li>
         </ul>
     </main>

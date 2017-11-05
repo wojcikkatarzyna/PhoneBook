@@ -1,12 +1,22 @@
 const app = angular.module("phoneBookApp", []);
 
-app.controller("contactController", function($scope) {
+app.controller("contactController", ['$scope', function($scope) {
     $scope.contactList = [
-      {avatar: "http://images5.fanpop.com/image/photos/25900000/Monica-Geller-monica-geller-25963717-1035-1280.jpg", name: "Monica", surname: "Geller", number: 666777888},
-      {avatar: "http://media4.s-nbcnews.com/j/msnbc/Components/Photos/040505/040505_schwimmer_vmed_2p.grid-4x2.jpg", name: "Ross", surname: "Geller", number: 123456789},
-      {avatar: "https://upload.wikimedia.org/wikipedia/en/6/6c/Matthew_Perry_as_Chandler_Bing.jpg", name: "Chandler", surname: "Bing", number: 156784515},
-      {avatar: "http://www.davespechtmotor.com/Friends/Pictures/Joey%20after.jpg", name: "Joey", surname: "Tribbiani", number: 852741963},
-      {avatar: "https://vignette.wikia.nocookie.net/loveinterest/images/9/93/Rachel_Green.png/revision/latest?cb=20160419025450", name: "Rachel", surname: "Green", number: 123789456},
-      {avatar: "https://lgbtfansdeservebetter.com/static/uploads/2016/09/Phoebe-Buffay-Lisa-Kudrow.png", name: "Phoebe", surname: "Buffay", number: 357167349},
-    ]
-})
+      {showDetails: true, avatar: "http://images5.fanpop.com/image/photos/25900000/Monica-Geller-monica-geller-25963717-1035-1280.jpg", name: "Monica", surname: "Geller", number: 666777888},
+      {showDetails: true, avatar: "http://media4.s-nbcnews.com/j/msnbc/Components/Photos/040505/040505_schwimmer_vmed_2p.grid-4x2.jpg", name: "Ross", surname: "Geller", number: 123456789},
+      {showDetails: true, avatar: "https://upload.wikimedia.org/wikipedia/en/6/6c/Matthew_Perry_as_Chandler_Bing.jpg", name: "Chandler", surname: "Bing", number: 156784515},
+      {showDetails: true, avatar: "http://www.davespechtmotor.com/Friends/Pictures/Joey%20after.jpg", name: "Joey", surname: "Tribbiani", number: 852741963},
+      {showDetails: true, avatar: "https://vignette.wikia.nocookie.net/loveinterest/images/9/93/Rachel_Green.png/revision/latest?cb=20160419025450", name: "Rachel", surname: "Green", number: 123789456},
+      {showDetails: true, avatar: "https://lgbtfansdeservebetter.com/static/uploads/2016/09/Phoebe-Buffay-Lisa-Kudrow.png", name: "Phoebe", surname: "Buffay", number: 357167349},
+    ];
+    $scope.toggleContact = function(index){
+        $scope.currentIndex = index;
+        console.log($scope.currentIndex);
+         $scope.contactList[$scope.currentIndex].showDetails = !$scope.contactList[$scope.currentIndex].showDetails;
+        // for (let i=0; i<$scope.contactList.length; i++) {
+        //   console.log($scope.contactList[i].showDetails);
+        // }
+        //angular.extend($scope.contactList[$index].showDetails, true);
+    };
+
+}])
