@@ -36,9 +36,9 @@
                 </div>
 
                 <div  ng-show="{{contact.showDetails}}" class="contactMoreInfo">
-                  <i class="material-icons">mode_edit</i>
+                    <i class="material-icons" ng-click="editContact($index)">mode_edit</i>
                     <div class="number"> {{contact.number}} </div>
-                    <i class="material-icons">delete</i>
+                    <i class="material-icons" ng-click="deleteContact($index)">delete</i>
                 </div>
             </li>
         </ul>

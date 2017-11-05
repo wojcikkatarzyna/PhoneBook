@@ -18,5 +18,7 @@ app.controller("contactController", ['$scope', function($scope) {
         // }
         //angular.extend($scope.contactList[$index].showDetails, true);
     };
-
+    $scope.deleteContact = function(index) {
+        $scope.contactList.splice(index,1);
+    }
 }])
